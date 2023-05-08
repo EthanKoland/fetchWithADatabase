@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  script(src="javascript/itemPage.js" defer)
+  h2 Add User
+  #selector
+    label(for='itemSelector') Select Item
+    select#itemSelector
+    button#loadItem(type='button' onclick="loadItem()") Load Item
+    
+  form(action='#' method='post')
+    label(for='name') Item Name
+    input#name(type='text' name = 'name' placeholder='itemName' required='')
+    br
+    label(for='price') Price
+    input#price(type='number' name = 'price' placeholder='Price' required='')
+    br
+    label(for='category') Category
+    input#category(type='test' name = 'category' placeholder='Category' required='')
+    br
+    label(for='ageRequirement') Age Restriction
+    input#ageRequirement(type='number' name = 'ageRequirement' placeholder='Age Restriction')
+    br
+    label(for='quantity') quantity
+    input#quantity(type='number' name = 'quantity' placeholder='quantity')
+    
+  button(onclick="addItem()") Add Item
+  button(onclick="deleteItem()") Delete Item
+  button(onclick="updateItem()") Update Item
